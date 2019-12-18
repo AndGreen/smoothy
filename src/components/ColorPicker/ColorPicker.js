@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components/macro";
 import { SketchPicker } from "react-color";
 
+const PickerWrapper = styled.div`
+  position: relative;
+`;
 const Swatch = styled.div`
   padding: 5px;
   background: #fff;
@@ -12,8 +15,8 @@ const Swatch = styled.div`
 `;
 
 const Color = styled.div`
-  width: 36px;
-  height: 14px;
+  width: 48px;
+  height: 24px;
   border-radius: 2px;
   background: rgba(
     ${p => p.color.r},
@@ -24,8 +27,10 @@ const Color = styled.div`
 `;
 
 const Popover = styled.div`
-  position: absolute;
   z-index: "2";
+  position: absolute;
+  right: calc(100% - 58px);
+  top: 0;
 `;
 
 const Cover = styled.div`
@@ -59,7 +64,7 @@ export const ColorPicker = () => {
   };
 
   return (
-    <>
+    <PickerWrapper>
       <Swatch onClick={handleClick}>
         <Color color={color} />
       </Swatch>
@@ -69,6 +74,6 @@ export const ColorPicker = () => {
           <SketchPicker color={color} onChange={handleChange} />
         </Popover>
       )}
-    </>
+    </PickerWrapper>
   );
 };

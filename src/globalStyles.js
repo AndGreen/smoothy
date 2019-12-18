@@ -1,6 +1,12 @@
 import { createGlobalStyle } from "styled-components/macro";
 
 export const GlobalStyle = createGlobalStyle`
+    * {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+
     body {
         margin: 0;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

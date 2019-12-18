@@ -12,6 +12,14 @@ import styled from "styled-components/macro";
 const DayPickerStyled = styled.div`
   input {
     padding: 0.5em 1em;
+    font-size: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+    width: 326px;
+  }
+  .DayPickerInput-OverlayWrapper {
+    transform: scale(1.18);
+    left: 30px;
   }
 `;
 
