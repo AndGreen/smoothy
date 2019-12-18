@@ -3,11 +3,13 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import App from "./App/App";
 import { store } from "./store";
+import { GlobalStyle } from "./globalStyles";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <Provider store={store}>
     <App />
+    <GlobalStyle />
   </Provider>,
   document.getElementById("root")
 );
