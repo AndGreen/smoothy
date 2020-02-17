@@ -1,3 +1,5 @@
+const path = require('path');
+
 /**
  * Metro configuration for React Native
  * https://github.com/facebook/react-native
@@ -14,4 +16,6 @@ module.exports = {
       },
     }),
   },
+  projectRoot: path.resolve(__dirname),
+  watchFolders: [path.resolve(__dirname, './src')],
 };
