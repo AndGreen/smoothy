@@ -9,70 +9,20 @@
  */
 
 import React from 'react';
-import {SafeAreaView, StatusBar} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {AboutScreen} from './Screens/About/About';
+import {HomeScreen} from './Screens/Home/Home';
 
-import {
-  ScrollViewStyled,
-  Engine,
-  Body,
-  SectionContainer,
-  SectionTitle,
-  SectionDescription,
-  Footer,
-  Highlight,
-} from './styles';
-
-import {
-  Header,
-  LearnMoreLinks,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-declare var global: {HermesInternal: null | {}};
+const Tab = createBottomTabNavigator();
 
 const App = () => (
-  <>
-    <StatusBar barStyle="dark-content" />
-    <SafeAreaView>
-      <ScrollViewStyled contentInsetAdjustmentBehavior="automatic">
-        <Header />
-        {global.HermesInternal == null ? null : (
-          <Engine>
-            <Footer>Engine: Hermes</Footer>
-          </Engine>
-        )}
-        <Body>
-          <SectionContainer>
-            <SectionTitle>Step One</SectionTitle>
-            <SectionDescription>
-              Edit <Highlight>App.tsx</Highlight> to change this screen and then
-              come back to see your edits.
-            </SectionDescription>
-          </SectionContainer>
-          <SectionContainer>
-            <SectionTitle>See Your Changes</SectionTitle>
-            <SectionDescription>
-              <ReloadInstructions />
-            </SectionDescription>
-          </SectionContainer>
-          <SectionContainer>
-            <SectionTitle>Debug</SectionTitle>
-            <SectionDescription>
-              <DebugInstructions />
-            </SectionDescription>
-          </SectionContainer>
-          <SectionContainer>
-            <SectionTitle>Learn More</SectionTitle>
-            <SectionDescription>
-              Read the docs to discover what to do next:
-            </SectionDescription>
-          </SectionContainer>
-          <LearnMoreLinks />
-        </Body>
-      </ScrollViewStyled>
-    </SafeAreaView>
-  </>
+  <NavigationContainer>
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="About" component={AboutScreen} />
+    </Tab.Navigator>
+  </NavigationContainer>
 );
 
 export default App;
